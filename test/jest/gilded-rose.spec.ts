@@ -30,4 +30,14 @@ describe("Gilded Rose", () => {
     expect(items[0].sellIn).toBe(4);
     expect(items[0].quality).toBe(0);
   });
+
+  it("Aged Brie Check", () => {
+    const gildedRose = new GildedRose([new Item("Aged Brie", 5, 1)]);
+
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].name).toBe("Aged Brie");
+    expect(items[0].sellIn).toBe(4);
+    expect(items[0].quality).toBe(2);
+  });
 });

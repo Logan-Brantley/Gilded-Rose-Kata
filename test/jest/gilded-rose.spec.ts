@@ -50,4 +50,16 @@ describe("Gilded Rose", () => {
     expect(items[0].sellIn).toBe(4);
     expect(items[0].quality).toBe(50);
   });
+
+  it("Sulfuras Check", () => {
+    const gildedRose = new GildedRose([
+      new Item("Sulfuras, Hand of Ragnaros", 5, 80),
+    ]);
+
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].name).toBe("Sulfuras, Hand of Ragnaros");
+    expect(items[0].sellIn).toBe(5);
+    expect(items[0].quality).toBe(80);
+  });
 });

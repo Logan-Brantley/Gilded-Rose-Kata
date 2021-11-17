@@ -20,4 +20,14 @@ describe("Gilded Rose", () => {
     expect(items[0].sellIn).toBe(-2);
     expect(items[0].quality).toBe(8);
   });
+
+  it("Normal Item Non-Negative Quality Check", () => {
+    const gildedRose = new GildedRose([new Item("Snacks", 5, 0)]);
+
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].name).toBe("Snacks");
+    expect(items[0].sellIn).toBe(4);
+    expect(items[0].quality).toBe(0);
+  });
 });

@@ -74,4 +74,16 @@ describe("Gilded Rose", () => {
     expect(items[0].sellIn).toBe(14);
     expect(items[0].quality).toBe(2);
   });
+
+  it("Backstage Passes Double-Quality-Increase Check", () => {
+    const gildedRose = new GildedRose([
+      new Item("Backstage passes to a TAFKAL80ETC concert", 9, 1),
+    ]);
+
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].name).toBe("Backstage passes to a TAFKAL80ETC concert");
+    expect(items[0].sellIn).toBe(8);
+    expect(items[0].quality).toBe(3);
+  });
 });
